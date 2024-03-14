@@ -1,0 +1,23 @@
+<div class="header">Fraud Detector</div>
+
+<div class="content">
+  <div class="links">
+    <a routerLinkActive="Active" [routerLink]="['/CreateIncident']">Create Fraudulent Incident</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/FindIncident']">Find Fraudulent Incident</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/FindIncidents']">Find All Fraudulent Incidents</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/UpdateIncident']">Update Fraudulent Incident</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/FindTransaction']">Find Transaction History</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/FindAllTransactions']">Find All Transaction Histories</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/TransactionsAndIncidents']">Transactions And Incidents</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/FilterIncidents']">Filtered Fraudulent Incidents</a><br>
+    <a routerLinkActive="Active" [routerLink]="['/FindTransactions']">Find Transactions</a><br>
+  </div>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="advertisement">Advertisement</div>
+</div>
+
+<div class="footer">Footer content</div>

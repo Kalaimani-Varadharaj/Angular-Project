@@ -1,0 +1,27 @@
+<div *ngIf="incidents.length > 0; else noIncidents">
+  <h2>Fraudulent Incidents</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Incident Number</th>
+        <th>Transaction Reference Number</th>
+        <th>Incident Status</th>
+        <th>Fraudulent Type</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let incident of incidents">
+        <td>{{ incident.incidentNumber }}</td>
+        <td>{{ incident.transactionReferenceNumber }}</td>
+        <td>{{ incident.incidentStatus }}</td>
+        <td>{{ incident.fraudulentType }}</td>
+        <td>{{ incident.comments }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noIncidents>
+  <p>No Fraudulent Incidents available</p>
+</ng-template>

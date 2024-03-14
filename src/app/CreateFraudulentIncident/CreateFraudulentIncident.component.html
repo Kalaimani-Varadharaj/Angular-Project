@@ -1,0 +1,31 @@
+
+<div class="row">
+  <div class="column">
+    <form (submit)="onSubmit(incidentForm)" #incidentForm="ngForm">
+      <!-- <label for="incidentId">Incident ID:</label>
+      <input type="number" id="incidentId" name="incidentId" required/> <br> -->
+
+      <label for="transactionReferenceNumber">Transaction Reference Number:</label>
+      <input type="text" id="transactionReferenceNumber" name="transactionReferenceNumber" required/> <br>
+
+      <label for="incidentStatus">Incident Status:</label>
+      <select id="incidentStatus" name="incidentStatus" required>
+        <option value="opened">Opened</option>
+        <option value="inProgress">In Progress</option>
+        <option value="closed">Closed</option>
+      </select> <br>
+
+      <label for="fraudulentType">Fraudulent Incident Type:</label>
+      <select id="fraudulentType" name="fraudulentType" required>
+        <option value="debitCardFraud">Debit Card Fraud</option>
+        <option value="identityTheft">Identity Theft</option>
+        <option value="creditCardFraud">Credit Card Fraud</option>
+      </select> <br>
+
+      <label for="comments">Comments:</label>
+      <input type="text" id="comments" name="comments" required/> <br>
+
+      <button type="submit">Create</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!-- find-transactions.component.html -->
+<div>
+  <label for="amount">Amount:</label>
+  <input type="number" id="amount" [(ngModel)]="amount" required/>
+
+  <label for="paymentMethod">Payment Method:</label>
+  <input type="text" id="paymentMethod" [(ngModel)]="paymentMethod" required/>
+
+  <button type="button" (click)="findTransactions()">Find Transactions</button>
+</div>
+
+<div *ngIf="error; else transactionsList">
+  <p>{{ error }}</p>
+</div>
+
+<ng-template #transactionsList>
+  <div *ngFor="let transaction of transactions">
+    <h4>Transaction Reference Number: {{ transaction.transactionReferenceNumber }}</h4>
+    <p>Amount: {{ transaction.amount }}</p>
+    <p>Sender Name: {{ transaction.senderName }}</p>
+    <p>Beneficiary Name: {{ transaction.beneficiaryName }}</p>
+
+    <div *ngIf="transaction.incidents.length > 0">
+      <h5>Incidents:</h5>
+      <ul>
+        <li *ngFor="let incident of transaction.Incidents">
+          <p>Incident Number: {{ incident.incidentNumber }}</p>
+          <p>Fraudulent Type: {{ incident.fraudulentType }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+  </div>
+</ng-template>

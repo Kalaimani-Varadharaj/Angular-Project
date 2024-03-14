@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="column">
+    <form (ngSubmit)="onSubmit()">
+
+      <!-- Incident Number -->
+      <label for="incidentNumber">Incident ID:</label>
+      <input type="number" id="incidentNumber" name="incidentNumber" [(ngModel)]="updateIncidentRequest.incidentNumber" required/>
+      <button type="button" (click)="fetchIncidentDetails()">Fetch Incident Details</button><br>
+
+      <!-- Display fetched details in the same textboxes -->
+      <div *ngIf="updateIncidentRequest.incidentNumber && fetchedDetails">
+        <label for="transactionReferenceNumber">Transaction Reference Number:</label>
+        <input type="text" id="transactionReferenceNumber" name="transactionReferenceNumber" [(ngModel)]="fetchedDetails.transactionReferenceNumber" required/><br>
+
+        <label for="incidentStatus">Incident Status:</label>
+        <select id="incidentStatus" name="incidentStatus" [(ngModel)]="fetchedDetails.incidentStatus" required>
+          <option value="opened">Opened</option>
+          <option value="inProgress">In Progress</option>
+          <option value="closed">Closed</option>
+        </select><br>
+
+        <label for="fraudulentType">Fraudulent Type:</label>
+        <select id="fraudulentType" name="fraudulentType" [(ngModel)]="fetchedDetails.fraudulentType" required>
+          <option value="debitCardFraud">Debit Card Fraud</option>
+          <option value="identityTheft">Identity Theft</option>
+          <option value="creditCardFraud">Credit Card Fraud</option>
+        </select><br>
+
+        <label for="comments">Comments:</label>
+        <input type="text" id="comments" name="comments" [(ngModel)]="fetchedDetails.comments" required/><br>
+      </div>
+
+      <button type="submit">Update Details</button>
+    </form>
+  </div>
+</div>

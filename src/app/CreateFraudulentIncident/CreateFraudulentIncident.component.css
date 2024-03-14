@@ -1,0 +1,23 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-container label {
+  margin-bottom: 3px;
+}
+
+.form-container input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 300px; /* Adjust the width as needed */
+}
+
+.form-container button {
+  padding: 8px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

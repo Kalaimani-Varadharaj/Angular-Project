@@ -1,0 +1,33 @@
+<div *ngIf="transactions.length > 0; else noTransactions">
+  <h2>Transaction Histories</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Transaction Reference Number</th>
+        <th>Transaction Date Time</th>
+        <th>Amount</th>
+        <th>Sender Account Number</th>
+        <th>Beneficiary Account Number</th>
+        <th>Sender Name</th>
+        <th>Beneficiary Name</th>
+        <th>Payment Method</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.transactionReferenceNumber }}</td>
+        <td>{{ transaction.transactionDateTime }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.senderAccountNumber }}</td>
+        <td>{{ transaction.beneficiaryAccountNumber }}</td>
+        <td>{{ transaction.senderName }}</td>
+        <td>{{ transaction.beneficiaryName }}</td>
+        <td>{{ transaction.paymentMethod }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noTransactions>
+  <p>No Transaction History Details available</p>
+</ng-template>

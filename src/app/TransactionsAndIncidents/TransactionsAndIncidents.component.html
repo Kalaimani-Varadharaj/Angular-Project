@@ -1,0 +1,32 @@
+<!-- transactions.component.html -->
+<div *ngIf="error; else transactionsList">
+  <p>{{ error }}</p>
+</div>
+
+<ng-template #transactionsList>
+  <div *ngFor="let transaction of transactions">
+    <h4>Transaction Reference Number: {{ transaction.transactionReferenceNumber}}</h4>
+    <p>Transaction DateTime: {{ transaction.transactionDateTime}}</p>
+    <p>Amount : {{ transaction.amount }}</p>
+    <p>Sender Account Number : {{ transaction.senderAccountNumber }}</p>
+    <p>Beneficiary Account Number : {{ transaction.beneficiaryAccountNumber }}</p>
+    <p>Sender Name : {{ transaction.senderName }}</p>
+    <p>Beneficiary Name : {{ transaction.beneficiaryName}}</p>
+    <p>Payment Method : {{ transaction.paymentMethod}}</p>
+    <!-- Add more details as needed -->
+
+    <div *ngIf="transaction.incidents.length > 0">
+      <h5>Incidents:</h5>
+      <ul>
+        <li *ngFor="let incident of transaction.incidents">
+          <p>Incident Number: {{ incident.incidentNumber }}</p>
+          <p>Fraudulent Type: {{ incident.fraudulentType }}</p>
+          <p>Incident Status: {{ incident.incidentStatus }}</p>
+          <p>Comments: {{ incident.comments }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+  </div>
+</ng-template>
